@@ -27,12 +27,15 @@ class LoggedTimeSessionResource extends JsonResource
                     $lastdt = new DateTime($d->last_active);
                 } else {
                     $dt = new DateTime($d->last_active);
-                    $diff = $lastdt->diff($dt);
-                    $lastdt = new DateTime($d->sum_session);
-                    $hour += $diff->h;
-                    $minutes = $diff->m;
+                    $diff_mins = abs($lastdt->getTimestamp() - $dt->getTimestamp()) / 60;
+                    //$diff = $lastdt->diff($dt);
+                    //$lastdt = new DateTime($d->sum_session);
+                    //$hour += $diff->h;
+                    $minutes = $diff_mins + $minutes;
                 }
             }
+            $hour = intdiv($minutes, 60);
+            $minutes = ($minutes % 60);
             $session_time = $hour. ':' . $minutes . ' hrs';
         }
 
