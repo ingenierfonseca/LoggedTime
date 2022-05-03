@@ -52,7 +52,7 @@ class LoggedTimeController extends Controller
             $query
             ->whereBetween('last_active', [$from, $to])->orderBy('last_active', 'desc');
         }])
-        ->where('name', 'like', '%' . $name . '%')->orWhere('name', 'like', '%' . $name . '%')->orderBy('name', 'asc')
+        ->where('name', 'like', '%' . $name . '%')->orWhere('name', 'like', '%' . $name . '%')->orderBy('name', 'desc')
         ->get();
 
         return LoggedTimeSessionResource::collection($data);

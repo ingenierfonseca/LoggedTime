@@ -29,7 +29,7 @@ class LoggedTimeSessionResource extends JsonResource
                     $dt = new DateTime($d->last_active);
                     $diff_mins = abs($lastdt->getTimestamp() - $dt->getTimestamp()) / 60;
                     //$diff = $lastdt->diff($dt);
-                    //$lastdt = new DateTime($d->sum_session);
+                    $lastdt = new DateTime($d->last_active);
                     //$hour += $diff->h;
                     $minutes = $diff_mins + $minutes;
                 }
