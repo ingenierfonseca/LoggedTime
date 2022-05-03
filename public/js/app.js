@@ -37623,7 +37623,7 @@ var render = function () {
       on: { click: _vm.getReportSession },
     }),
     _vm._v(" "),
-    _c("table", [
+    _c("table", { staticClass: "table" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(

@@ -10,7 +10,7 @@
             value="2022-05-02"
             min="2000-01-01" max="2022-12-31" @change="getReportSession">
         <input type="button" value="buscar" @click="getReportSession">
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>Nombre</th>
